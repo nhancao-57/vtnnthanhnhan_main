@@ -3,41 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta name="theme-color" content="#f3f4f6" id="theme-color-meta">
-    <title>Cửa hàng VTNN Thành Nhân</title>
     
+    <title>Cửa hàng VTNN Thành Nhân</title>
+    <meta name="description" content="Cửa hàng Vật Tư Nông Nghiệp Thành Nhân. Chuyên cung cấp phân bón, thuốc bảo vệ thực vật uy tín tại Đồng Nai, Bình Phước">
+    <meta name="keywords" content="VTNN Thành Nhân, vật tư nông nghiệp Bình Phước, phân bón Bình Long, thuốc trừ sâu, thuốc bvtv, nông nghiệp Bình Phước, cửa hàng nông nghiệp, vật tư nông nghiệp Đồng Nai">
+    <meta name="author" content="VTNN Thành Nhân">
+    <meta name="robots" content="index, follow">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="VTNN Thành Nhân">
+    <meta property="og:description" content="Địa chỉ: 16 QL13, Thanh Phú, Bình Long, Bình Phước. Chuyên phân bón & thuốc BVTV.">
+    <meta property="og:url" content="https://vtnnthanhnhan.io.vn"> 
+    <meta property="og:image" content="https://vtnnthanhnhan.io.vn/images/thanhnhan_main.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="vi_VN">
+
+    <meta name="theme-color" content="#f3f4f6" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0f172a" media="(prefers-color-scheme: dark)">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="icon" type="image/png" href="/images/logo_thanhnhan.png">
+    <link rel="apple-touch-icon" href="/images/logo_thanhnhan.png">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FarmStore",
+      "name": "Cửa hàng VTNN Thành Nhân",
+      "image": "https://vtnnthanhnhan.com/images/thanhnhan_main.jpg",
+      "description": "Chuyên kinh doanh phân bón và thuốc bảo vệ thực vật tại Bình Long, Bình Phước.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "16 QL13, Thanh Phú",
+        "addressLocality": "Bình Long",
+        "addressRegion": "Bình Phước",
+        "postalCode": "830000",
+        "addressCountry": "VN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "11.6961", 
+        "longitude": "106.6033"
+      },
+      "telephone": "+84913637168",
+      "priceRange": "$$"
+    }
+    </script>
+
     <script>
         tailwind.config = {
-            darkMode: 'class', // Enables class-based dark mode
+            darkMode: 'class',
             theme: {
                 extend: {
-                    fontFamily: {
-                        sans: ['Be Vietnam Pro', 'sans-serif'],
-                    },
+                    fontFamily: { sans: ['Be Vietnam Pro', 'sans-serif'] },
                     colors: {
                         brandRed: '#DC2626',   
                         brandYellow: '#FBBF24', 
-                        darkCard: '#1e293b', // Slate 800
-                        darkBg: '#0f172a',   // Slate 900
+                        darkCard: '#1e293b',
+                        darkBg: '#0f172a',
                     }
                 }
             }
         }
     </script>
-
+    
     <style>
-        /* Smooth transition for theme switching */
-        body, div, p, h1, span, a, button {
-            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-        }
-        /* Custom scrollbar to match sleek look */
+        body, div, p, h1, span, a, button { transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; }
         ::-webkit-scrollbar { width: 6px; }
         ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
         .dark ::-webkit-scrollbar-thumb { background: #475569; }
