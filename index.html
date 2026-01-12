@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="vi" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta name="theme-color" content="#f3f4f6">
+    <meta name="theme-color" content="#f3f4f6" id="theme-color-meta">
     <title>Cửa hàng VTNN Thành Nhân</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,11 +11,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <script src="https://cdn.tailwindcss.com"></script>
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <script>
         tailwind.config = {
+            darkMode: 'class', // Enables class-based dark mode
             theme: {
                 extend: {
                     fontFamily: {
@@ -24,100 +24,137 @@
                     colors: {
                         brandRed: '#DC2626',   
                         brandYellow: '#FBBF24', 
-                        brandWhite: '#FFFFFF',
+                        darkCard: '#1e293b', // Slate 800
+                        darkBg: '#0f172a',   // Slate 900
                     }
                 }
             }
         }
     </script>
-</head>
-<body class="bg-gray-100 text-gray-800 min-h-screen flex flex-col items-center justify-center p-3 sm:p-4">
 
-    <main class="w-full max-w-md bg-white rounded-[2rem] shadow-2xl overflow-hidden relative flex flex-col">
-        
-        <div class="relative h-48 w-full overflow-hidden bg-gray-300">
-            <img src="/images/thanhnhan_main.jpg" 
-                 alt="Hình ảnh cửa hàng" 
-                 class="w-full h-full object-cover  scale-110 opacity-90 brightness-75">
+    <style>
+        /* Smooth transition for theme switching */
+        body, div, p, h1, span, a, button {
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+        /* Custom scrollbar to match sleek look */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+        .dark ::-webkit-scrollbar-thumb { background: #475569; }
+    </style>
+</head>
+
+<body class="bg-gray-100 dark:bg-darkBg text-gray-800 dark:text-gray-200 min-h-screen flex flex-col items-center justify-center p-3 sm:p-4 selection:bg-brandRed selection:text-white">
+
+    <div class="fixed top-4 right-4 z-50 flex gap-2">
+        <div class="bg-white/80 dark:bg-slate-800/80 backdrop-blur-md p-1.5 rounded-full shadow-lg border border-white/50 dark:border-slate-700 flex items-center gap-1">
             
-            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+            <button onclick="toggleLang()" class="w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold hover:bg-gray-200 dark:hover:bg-slate-700 transition-colors border border-transparent dark:border-slate-600">
+                <span id="lang-display">VN</span>
+            </button>
+
+            <div class="w-px h-4 bg-gray-300 dark:bg-slate-600 mx-1"></div>
+
+            <button onclick="toggleTheme()" class="w-8 h-8 rounded-full flex items-center justify-center text-gray-600 dark:text-yellow-400 hover:bg-gray-200 dark:hover:bg-slate-700 transition-colors">
+                <i id="theme-icon" class="fa-solid fa-moon"></i>
+            </button>
+        </div>
+    </div>
+
+    <main class="w-full max-w-md bg-white dark:bg-darkCard rounded-[2rem] shadow-2xl overflow-hidden relative flex flex-col border border-gray-100 dark:border-slate-700">
+        
+        <div class="relative h-48 w-full overflow-hidden bg-gray-300 dark:bg-slate-700">
+            <img src="/images/thanhnhan_main.jpg" 
+                 alt="Store Front" 
+                 class="w-full h-full object-cover scale-110 opacity-90 brightness-75 dark:opacity-70">
+            
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
         </div>
 
         <div class="relative px-6 -mt-16 text-center flex-grow pb-8">
             
             <div class="relative inline-block">
-                <div class="w-32 h-32 bg-white rounded-full p-1 shadow-lg mx-auto">
+                <div class="w-32 h-32 bg-white dark:bg-darkCard rounded-full p-1 shadow-lg mx-auto transition-colors">
                     <img src="/images/logo_thanhnhan.png" 
-                         alt="Logo Thành Nhân" 
-                         class="w-full h-full rounded-full object-cover border-4 border-white">
+                         alt="Logo" 
+                         class="w-full h-full rounded-full object-cover border-4 border-white dark:border-slate-600">
                 </div>
-                <div class="absolute bottom-0 right-0 bg-brandRed text-white text-xs font-bold px-2 py-1 rounded-full border-2 border-white shadow-sm">
+                <div class="absolute bottom-0 right-0 bg-brandRed text-white text-xs font-bold px-2 py-1 rounded-full border-2 border-white dark:border-darkCard shadow-sm">
                     Est. 2000
                 </div>
             </div>
 
-            <h1 class="text-2xl font-bold text-gray-900 mt-3">
+            <h1 class="text-2xl font-bold text-gray-900 dark:text-white mt-3" 
+                data-vi="Cửa hàng VTNN Thành Nhân" 
+                data-en="Thanh Nhan Store">
                 Cửa hàng VTNN Thành Nhân
             </h1>
-            <p class="text-gray-600 text-sm mt-1 px-4 leading-relaxed">
+            
+            <p class="text-gray-600 dark:text-gray-400 text-sm mt-1 px-4 leading-relaxed"
+               data-vi="Chuyên kinh doanh phân bón & <br> Thuốc bảo vệ thực vật"
+               data-en="Specializing in Fertilizers & <br> Plant Protection Products">
                 Chuyên kinh doanh phân bón & <br> Thuốc bảo vệ thực vật
             </p>
 
             <div class="mt-8 space-y-3">
                 
-                <a href="tel:0913637168" class="flex items-center p-3 bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md hover:border-brandRed transition-all active:scale-95 group">
-                    <div class="w-10 h-10 rounded-full bg-red-100 flex items-center justify-center text-brandRed mr-3 group-hover:bg-brandRed group-hover:text-white transition-colors">
+                <a href="tel:0913637168" class="flex items-center p-3 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl shadow-sm hover:shadow-md hover:border-brandRed dark:hover:border-brandRed transition-all active:scale-95 group">
+                    <div class="w-10 h-10 rounded-full bg-red-100 dark:bg-red-900/30 flex items-center justify-center text-brandRed mr-3 group-hover:bg-brandRed group-hover:text-white transition-colors">
                         <i class="fa-solid fa-phone"></i>
                     </div>
                     <div class="text-left flex-grow">
-                        <p class="text-xs text-gray-500 font-medium">Số điện thoại</p>
-                        <p class="text-base font-bold text-gray-800">0913 637 168</p>
+                        <p class="text-xs text-gray-500 dark:text-gray-400 font-medium" data-vi="Số điện thoại" data-en="Phone Number">Số điện thoại</p>
+                        <p class="text-base font-bold text-gray-800 dark:text-gray-100">0913 637 168</p>
                     </div>
-                    <i class="fa-solid fa-chevron-right text-gray-300 text-sm"></i>
+                    <i class="fa-solid fa-chevron-right text-gray-300 dark:text-slate-600 text-sm"></i>
                 </a>
 
-                <a href="https://www.facebook.com/vtnn.thanhnhan" target="_blank" class="flex items-center p-3 bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md hover:border-blue-500 transition-all active:scale-95 group">
-                    <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mr-3 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                <a href="https://www.facebook.com/vtnn.thanhnhan" target="_blank" class="flex items-center p-3 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl shadow-sm hover:shadow-md hover:border-blue-500 transition-all active:scale-95 group">
+                    <div class="w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-blue-600 mr-3 group-hover:bg-blue-600 group-hover:text-white transition-colors">
                         <i class="fa-brands fa-facebook-f"></i>
                     </div>
                     <div class="text-left flex-grow">
-                        <p class="text-xs text-gray-500 font-medium">Mạng xã hội</p>
-                        <p class="text-base font-bold text-gray-800">Facebook Page</p>
+                        <p class="text-xs text-gray-500 dark:text-gray-400 font-medium" data-vi="Mạng xã hội" data-en="Social Media">Mạng xã hội</p>
+                        <p class="text-base font-bold text-gray-800 dark:text-gray-100">Facebook Page</p>
                     </div>
-                    <i class="fa-solid fa-arrow-up-right-from-square text-gray-300 text-sm"></i>
+                    <i class="fa-solid fa-arrow-up-right-from-square text-gray-300 dark:text-slate-600 text-sm"></i>
                 </a>
 
-                <button onclick="copyEmail()" class="w-full flex items-center p-3 bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md hover:border-brandYellow transition-all active:scale-95 group relative">
-                    <div class="w-10 h-10 rounded-full bg-yellow-100 flex items-center justify-center text-yellow-700 mr-3 group-hover:bg-brandYellow group-hover:text-white transition-colors">
+                <button onclick="copyEmail()" class="w-full flex items-center p-3 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl shadow-sm hover:shadow-md hover:border-brandYellow transition-all active:scale-95 group relative">
+                    <div class="w-10 h-10 rounded-full bg-yellow-100 dark:bg-yellow-900/30 flex items-center justify-center text-yellow-700 dark:text-yellow-500 mr-3 group-hover:bg-brandYellow group-hover:text-white transition-colors">
                         <i class="fa-solid fa-envelope"></i>
                     </div>
                     <div class="text-left flex-grow overflow-hidden">
-                        <p class="text-xs text-gray-500 font-medium">Email (Nhấn để sao chép)</p>
-                        <p class="text-sm font-bold text-gray-800 truncate">vtnnthanhnhanbp@gmail.com</p>
+                        <p class="text-xs text-gray-500 dark:text-gray-400 font-medium" data-vi="Email (Nhấn để sao chép)" data-en="Email (Tap to copy)">Email (Nhấn để sao chép)</p>
+                        <p class="text-sm font-bold text-gray-800 dark:text-gray-100 truncate">vtnnthanhnhanbp@gmail.com</p>
                     </div>
-                    <i id="copy-icon" class="fa-regular fa-copy text-gray-300 text-sm"></i>
+                    <i id="copy-icon" class="fa-regular fa-copy text-gray-300 dark:text-slate-600 text-sm"></i>
                     
-                    <div id="toast" class="absolute top-[-40px] left-1/2 transform -translate-x-1/2 bg-gray-800 text-white text-xs py-1 px-3 rounded shadow-lg opacity-0 transition-opacity duration-300 pointer-events-none">
+                    <div id="toast" class="absolute top-[-40px] left-1/2 transform -translate-x-1/2 bg-gray-800 dark:bg-white text-white dark:text-gray-900 text-xs py-1 px-3 rounded shadow-lg opacity-0 transition-opacity duration-300 pointer-events-none" 
+                         data-vi="Đã sao chép!" data-en="Copied!">
                         Đã sao chép!
                     </div>
                 </button>
             </div>
 
             <div class="mt-8">
-                <div class="flex items-center justify-center mb-3">
-                    <span class="h-px w-8 bg-gray-300"></span>
-                    <span class="text-xs font-semibold text-gray-400 uppercase mx-2 tracking-wider">Địa chỉ</span>
-                    <span class="h-px w-8 bg-gray-300"></span>
+                <div class="flex items-center justify-center mb-4">
+                    <span class="h-px w-8 bg-gray-300 dark:bg-slate-600"></span>
+                    <span class="text-xs font-semibold text-gray-400 dark:text-slate-500 uppercase mx-2 tracking-wider" 
+                          data-vi="ĐỊA CHỈ" 
+                          data-en="LOCATION">ĐỊA CHỈ</span>
+                    <span class="h-px w-8 bg-gray-300 dark:bg-slate-600"></span>
                 </div>
                 
-                <div class="text-center mb-4 px-2">
-                    <p class="text-sm font-medium text-gray-700 leading-snug">
-                        <i class="fa-solid fa-location-dot text-brandRed mr-1"></i>
-                        16 QL13, Thanh Phú, Bình Long,<br> Bình Phước, Vietnam
-                    </p>
-                </div>
-                <div class="rounded-xl overflow-hidden shadow-md border border-gray-200 bg-gray-50 p-1">
-                    <div class="relative w-full aspect-video rounded-lg overflow-hidden">
+                <div class="rounded-xl overflow-hidden shadow-md border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-800">
+                    <div class="p-4 bg-gray-50 dark:bg-slate-800/50 border-b border-gray-100 dark:border-slate-700 flex items-start gap-3 text-left">
+                        <i class="fa-solid fa-location-dot text-brandRed mt-1"></i>
+                        <p class="text-sm text-gray-700 dark:text-gray-300 leading-snug">
+                            16 QL13, Thanh Phú, Bình Long,<br> Bình Phước, Vietnam
+                        </p>
+                    </div>
+                    
+                    <div class="relative w-full aspect-video bg-gray-200 dark:bg-slate-700">
                         <iframe 
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3907.3457879631933!2d106.61003677401197!3d11.669887942080829!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317353f61dfa8769%3A0xa7fc2fc0cbfb4081!2zQ-G7rWEgaMOgbmcgVlROTiBUaMOgbmggTmjDom4!5e0!3m2!1sen!2s!4v1768229223248!5m2!1sen!2s" 
                             width="100%" 
@@ -125,38 +162,95 @@
                             style="border:0;" 
                             allowfullscreen="" 
                             loading="lazy" 
+                            class="opacity-90 hover:opacity-100 transition-opacity"
                             referrerpolicy="no-referrer-when-downgrade">
                         </iframe>
                     </div>
-                    <a href="https://maps.app.goo.gl/oWKxGUAcd6qPjAHN9" target="_blank" class="block w-full text-center py-2 text-xs font-medium text-brandRed hover:underline">
-                        Mở bản đồ chỉ đường <i class="fa-solid fa-location-arrow ml-1"></i>
+
+                    <a href="https://maps.app.goo.gl/oWKxGUAcd6qPjAHN9" target="_blank" class="block w-full text-center py-3 text-xs font-bold text-brandRed hover:bg-red-50 dark:hover:bg-red-900/10 transition-colors">
+                        <span data-vi="Mở bản đồ chỉ đường" data-en="Open Google Maps">Mở bản đồ chỉ đường</span> 
+                        <i class="fa-solid fa-location-arrow ml-1"></i>
                     </a>
                 </div>
             </div>
 
         </div>
         
-        <div class="w-full bg-gray-50 py-4 text-center border-t border-gray-100">
-            <p class="text-[10px] text-gray-400">© 2026 Cửa hàng VTNN Thành Nhân</p>
+        <div class="w-full bg-gray-50 dark:bg-slate-800/50 py-4 text-center border-t border-gray-100 dark:border-slate-700">
+            <p class="text-[10px] text-gray-400 dark:text-slate-500">© 2026 Cửa hàng VTNN Thành Nhân</p>
         </div>
 
     </main>
 
     <script>
+        // --- LOGIC: Theme Management ---
+        const themeIcon = document.getElementById('theme-icon');
+        const themeMeta = document.getElementById('theme-color-meta');
+        
+        // 1. Check System or Local Storage on Launch
+        function initTheme() {
+            if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+                themeMeta.content = "#0f172a"; // Match slate-900
+            } else {
+                document.documentElement.classList.remove('dark');
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+                themeMeta.content = "#f3f4f6"; // Match gray-100
+            }
+        }
+
+        // 2. Toggle Function
+        function toggleTheme() {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.theme = 'light';
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+                themeMeta.content = "#f3f4f6";
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.theme = 'dark';
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+                themeMeta.content = "#0f172a";
+            }
+        }
+
+        // --- LOGIC: Language Management ---
+        let currentLang = localStorage.getItem('lang') || 'vi'; // Default VI
+        const langDisplay = document.getElementById('lang-display');
+
+        function updateContent() {
+            const elements = document.querySelectorAll(`[data-${currentLang}]`);
+            elements.forEach(el => {
+                // Use innerHTML to preserve <br> tags
+                el.innerHTML = el.getAttribute(`data-${currentLang}`);
+            });
+            
+            // Update Toggle Button Text
+            langDisplay.innerText = currentLang === 'vi' ? 'VN' : 'EN';
+        }
+
+        function toggleLang() {
+            currentLang = currentLang === 'vi' ? 'en' : 'vi';
+            localStorage.setItem('lang', currentLang);
+            updateContent();
+        }
+
+        // --- LOGIC: Copy Email ---
         function copyEmail() {
             const email = "vtnnthanhnhanbp@gmail.com";
             navigator.clipboard.writeText(email).then(() => {
                 const toast = document.getElementById('toast');
                 const icon = document.getElementById('copy-icon');
                 
-                // Show toast
                 toast.classList.remove('opacity-0');
-                
-                // Change icon
                 icon.classList.remove('fa-copy', 'fa-regular');
                 icon.classList.add('fa-check', 'fa-solid', 'text-green-500');
 
-                // Reset
                 setTimeout(() => {
                     toast.classList.add('opacity-0');
                     icon.classList.remove('fa-check', 'fa-solid', 'text-green-500');
@@ -164,6 +258,10 @@
                 }, 2000);
             });
         }
+
+        // Initialize on Load
+        initTheme();
+        updateContent();
     </script>
 </body>
 </html>
