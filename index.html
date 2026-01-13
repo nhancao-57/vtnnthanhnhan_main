@@ -5,57 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     
     <title>Cửa hàng VTNN Thành Nhân</title>
-    <meta name="description" content="Cửa hàng Vật Tư Nông Nghiệp Thành Nhân. Chuyên cung cấp phân bón, thuốc bảo vệ thực vật uy tín tại Đồng Nai, Bình Phước">
-    <meta name="keywords" content="VTNN Thành Nhân, vật tư nông nghiệp Bình Phước, phân bón Bình Long, thuốc trừ sâu, thuốc bvtv, nông nghiệp Bình Phước, cửa hàng nông nghiệp, vật tư nông nghiệp Đồng Nai">
-    <meta name="author" content="VTNN Thành Nhân">
-    <meta name="robots" content="index, follow">
+    <meta name="description" content="Cửa hàng Vật Tư Nông Nghiệp Thành Nhân. Chuyên cung cấp phân bón, thuốc bảo vệ thực vật uy tín.">
     
     <meta property="og:type" content="website">
     <meta property="og:title" content="VTNN Thành Nhân">
-    <meta property="og:description" content="Địa chỉ: 16 QL13, Thanh Phú, Bình Long, Bình Phước. Chuyên phân bón & thuốc BVTV.">
-    <meta property="og:url" content="https://vtnnthanhnhan.io.vn"> 
+    <meta property="og:description" content="Chuyên phân bón & thuốc BVTV.">
     <meta property="og:image" content="https://vtnnthanhnhan.io.vn/images/thanhnhan_main.jpg">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:locale" content="vi_VN">
-
-    <meta name="theme-color" content="#f3f4f6" media="(prefers-color-scheme: light)">
-    <meta name="theme-color" content="#0f172a" media="(prefers-color-scheme: dark)">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    <meta name="theme-color" id="theme-color-meta" content="#f3f4f6">
     <link rel="icon" type="image/png" href="/images/logo_thanhnhan.png">
-    <link rel="apple-touch-icon" href="/images/logo_thanhnhan.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FarmStore",
-      "name": "Cửa hàng VTNN Thành Nhân",
-      "image": "https://vtnnthanhnhan.com/images/thanhnhan_main.jpg",
-      "description": "Chuyên kinh doanh phân bón và thuốc bảo vệ thực vật tại Bình Long, Bình Phước.",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "16 QL13, Thanh Phú",
-        "addressLocality": "Bình Long",
-        "addressRegion": "Bình Phước",
-        "postalCode": "830000",
-        "addressCountry": "VN"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": "11.6961", 
-        "longitude": "106.6033"
-      },
-      "telephone": "+84913637168",
-      "priceRange": "$$"
-    }
-    </script>
 
     <script>
         tailwind.config = {
@@ -96,6 +60,12 @@
             <button onclick="toggleTheme()" class="w-8 h-8 rounded-full flex items-center justify-center text-gray-600 dark:text-yellow-400 hover:bg-gray-200 dark:hover:bg-slate-700 transition-colors">
                 <i id="theme-icon" class="fa-solid fa-moon"></i>
             </button>
+
+            <div class="w-px h-4 bg-gray-300 dark:bg-slate-600 mx-1"></div>
+
+            <button onclick="sharePage()" class="w-8 h-8 rounded-full flex items-center justify-center text-brandRed hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors">
+                <i class="fa-solid fa-share-nodes"></i>
+            </button>
         </div>
     </div>
 
@@ -105,7 +75,6 @@
             <img src="/images/thanhnhan_main.jpg" 
                  alt="Store Front" 
                  class="w-full h-full object-cover scale-110 opacity-90 brightness-75 dark:opacity-70">
-            
             <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
         </div>
 
@@ -122,7 +91,7 @@
                 </div>
             </div>
 
-            <h1 class="text-2xl font-bold text-gray-900 dark:text-white mt-3" 
+            <h1 class="text-2xl font-bold text-brandRed mt-3" 
                 data-vi="Cửa hàng VTNN Thành Nhân" 
                 data-en="Thanh Nhan Store">
                 Cửa hàng VTNN Thành Nhân
@@ -135,7 +104,6 @@
             </p>
 
             <div class="mt-8 space-y-3">
-                
                 <a href="tel:0913637168" class="flex items-center p-3 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl shadow-sm hover:shadow-md hover:border-brandRed dark:hover:border-brandRed transition-all active:scale-95 group">
                     <div class="w-10 h-10 rounded-full bg-red-100 dark:bg-red-900/30 flex items-center justify-center text-brandRed mr-3 group-hover:bg-brandRed group-hover:text-white transition-colors">
                         <i class="fa-solid fa-phone"></i>
@@ -158,20 +126,15 @@
                     <i class="fa-solid fa-arrow-up-right-from-square text-gray-300 dark:text-slate-600 text-sm"></i>
                 </a>
 
-                <button onclick="copyEmail()" class="w-full flex items-center p-3 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl shadow-sm hover:shadow-md hover:border-brandYellow transition-all active:scale-95 group relative">
+                <button onclick="copyContent('vtnnthanhnhanbp@gmail.com', 'email-icon')" class="w-full flex items-center p-3 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl shadow-sm hover:shadow-md hover:border-brandYellow transition-all active:scale-95 group">
                     <div class="w-10 h-10 rounded-full bg-yellow-100 dark:bg-yellow-900/30 flex items-center justify-center text-yellow-700 dark:text-yellow-500 mr-3 group-hover:bg-brandYellow group-hover:text-white transition-colors">
                         <i class="fa-solid fa-envelope"></i>
                     </div>
                     <div class="text-left flex-grow overflow-hidden">
-                        <p class="text-xs text-gray-500 dark:text-gray-400 font-medium" data-vi="Email (Nhấn để sao chép)" data-en="Email (Tap to copy)">Email (Nhấn để sao chép)</p>
+                        <p class="text-xs text-gray-500 dark:text-gray-400 font-medium" data-vi="Email" data-en="Email">Email</p>
                         <p class="text-sm font-bold text-gray-800 dark:text-gray-100 truncate">vtnnthanhnhanbp@gmail.com</p>
                     </div>
-                    <i id="copy-icon" class="fa-regular fa-copy text-gray-300 dark:text-slate-600 text-sm"></i>
-                    
-                    <div id="toast" class="absolute top-[-40px] left-1/2 transform -translate-x-1/2 bg-gray-800 dark:bg-white text-white dark:text-gray-900 text-xs py-1 px-3 rounded shadow-lg opacity-0 transition-opacity duration-300 pointer-events-none" 
-                         data-vi="Đã sao chép!" data-en="Copied!">
-                        Đã sao chép!
-                    </div>
+                    <i id="email-icon" class="fa-regular fa-copy text-gray-300 dark:text-slate-600 text-sm"></i>
                 </button>
             </div>
 
@@ -185,14 +148,34 @@
                 </div>
                 
                 <div class="rounded-xl overflow-hidden shadow-md border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-800">
-                    <div class="p-4 bg-gray-50 dark:bg-slate-800/50 border-b border-gray-100 dark:border-slate-700 flex items-start gap-3 text-left">
-                        <i class="fa-solid fa-location-dot text-brandRed mt-1"></i>
-                        <p class="text-sm text-gray-700 dark:text-gray-300 leading-snug">
-                            16 QL13, Thanh Phú, Bình Long,<br> Bình Phước, Vietnam
-                        </p>
+                    
+                    <div class="p-4 border-b border-gray-100 dark:border-slate-700 flex items-start gap-3 text-left relative group hover:bg-gray-50 dark:hover:bg-slate-700/50 transition-colors">
+                        <i class="fa-solid fa-location-dot text-brandRed mt-1 shrink-0"></i>
+                        <div class="flex-grow pr-6">
+                            <p class="text-[10px] uppercase font-bold text-gray-400 dark:text-slate-500 mb-0.5" data-vi="Địa chỉ chính" data-en="Address">Địa chỉ chính</p>
+                            <p class="text-sm text-gray-800 dark:text-gray-200 font-medium leading-snug">
+                                Khu phố Phú Long, phường An Lộc, Đồng Nai, Việt Nam
+                            </p>
+                        </div>
+                        <button onclick="copyContent('Khu phố Phú Long, phường An Lộc, Đồng Nai, Việt Nam', 'icon-addr-1')" class="absolute top-4 right-4 text-gray-300 hover:text-brandRed transition-colors">
+                            <i id="icon-addr-1" class="fa-regular fa-copy"></i>
+                        </button>
+                    </div>
+
+                    <div class="p-4 bg-gray-50 dark:bg-slate-800/50 border-b border-gray-100 dark:border-slate-700 flex items-start gap-3 text-left relative group hover:bg-gray-100 dark:hover:bg-slate-700 transition-colors">
+                        <i class="fa-solid fa-clock-rotate-left text-gray-400 mt-1 shrink-0"></i>
+                        <div class="flex-grow pr-6">
+                            <p class="text-[10px] uppercase font-bold text-gray-400 dark:text-slate-500 mb-0.5" data-vi="Trước khi thay đổi địa giới hành chính" data-en="Old Address">Trước khi thay đổi địa giới hành chính</p>
+                            <p class="text-sm text-gray-600 dark:text-gray-400 leading-snug">
+                                16 QL13, Thanh Phú, Bình Long, Bình Phước, Vietnam
+                            </p>
+                        </div>
+                        <button onclick="copyContent('16 QL13, Thanh Phú, Bình Long, Bình Phước, Vietnam', 'icon-addr-2')" class="absolute top-4 right-4 text-gray-300 hover:text-brandRed transition-colors">
+                            <i id="icon-addr-2" class="fa-regular fa-copy"></i>
+                        </button>
                     </div>
                     
-                    <div class="relative w-full aspect-video bg-gray-200 dark:bg-slate-700">
+                    <div class="relative w-full h-32 bg-gray-200 dark:bg-slate-700">
                         <iframe 
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3907.3457879631933!2d106.61003677401197!3d11.669887942080829!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317353f61dfa8769%3A0xa7fc2fc0cbfb4081!2zQ-G7rWEgaMOgbmcgVlROTiBUaMOgbmggTmjDom4!5e0!3m2!1sen!2s!4v1768229223248!5m2!1sen!2s" 
                             width="100%" 
@@ -200,12 +183,12 @@
                             style="border:0;" 
                             allowfullscreen="" 
                             loading="lazy" 
-                            class="opacity-90 hover:opacity-100 transition-opacity"
+                            class="opacity-70 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-500"
                             referrerpolicy="no-referrer-when-downgrade">
                         </iframe>
                     </div>
 
-                    <a href="https://maps.app.goo.gl/oWKxGUAcd6qPjAHN9" target="_blank" class="block w-full text-center py-3 text-xs font-bold text-brandRed hover:bg-red-50 dark:hover:bg-red-900/10 transition-colors">
+                    <a href="https://www.google.com/maps/search/Khu+phố+Phú+Long,+phường+An+Lộc,+Đồng+Nai" target="_blank" class="block w-full text-center py-3 text-xs font-bold text-brandRed hover:bg-red-50 dark:hover:bg-red-900/10 transition-colors">
                         <span data-vi="Mở bản đồ chỉ đường" data-en="Open Google Maps">Mở bản đồ chỉ đường</span> 
                         <i class="fa-solid fa-location-arrow ml-1"></i>
                     </a>
@@ -225,22 +208,20 @@
         const themeIcon = document.getElementById('theme-icon');
         const themeMeta = document.getElementById('theme-color-meta');
         
-        // 1. Check System or Local Storage on Launch
         function initTheme() {
             if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
                 document.documentElement.classList.add('dark');
                 themeIcon.classList.remove('fa-moon');
                 themeIcon.classList.add('fa-sun');
-                themeMeta.content = "#0f172a"; // Match slate-900
+                themeMeta.content = "#0f172a"; 
             } else {
                 document.documentElement.classList.remove('dark');
                 themeIcon.classList.remove('fa-sun');
                 themeIcon.classList.add('fa-moon');
-                themeMeta.content = "#f3f4f6"; // Match gray-100
+                themeMeta.content = "#f3f4f6"; 
             }
         }
 
-        // 2. Toggle Function
         function toggleTheme() {
             if (document.documentElement.classList.contains('dark')) {
                 document.documentElement.classList.remove('dark');
@@ -258,17 +239,14 @@
         }
 
         // --- LOGIC: Language Management ---
-        let currentLang = localStorage.getItem('lang') || 'vi'; // Default VI
+        let currentLang = localStorage.getItem('lang') || 'vi';
         const langDisplay = document.getElementById('lang-display');
 
         function updateContent() {
             const elements = document.querySelectorAll(`[data-${currentLang}]`);
             elements.forEach(el => {
-                // Use innerHTML to preserve <br> tags
                 el.innerHTML = el.getAttribute(`data-${currentLang}`);
             });
-            
-            // Update Toggle Button Text
             langDisplay.innerText = currentLang === 'vi' ? 'VN' : 'EN';
         }
 
@@ -278,26 +256,46 @@
             updateContent();
         }
 
-        // --- LOGIC: Copy Email ---
-        function copyEmail() {
-            const email = "vtnnthanhnhanbp@gmail.com";
-            navigator.clipboard.writeText(email).then(() => {
-                const toast = document.getElementById('toast');
-                const icon = document.getElementById('copy-icon');
-                
-                toast.classList.remove('opacity-0');
-                icon.classList.remove('fa-copy', 'fa-regular');
-                icon.classList.add('fa-check', 'fa-solid', 'text-green-500');
+        // --- LOGIC: Share Function ---
+        async function sharePage() {
+            const shareData = {
+                title: 'VTNN Thành Nhân',
+                text: 'Cửa hàng VTNN Thành Nhân - Đồng Nai',
+                url: window.location.href
+            };
 
-                setTimeout(() => {
-                    toast.classList.add('opacity-0');
-                    icon.classList.remove('fa-check', 'fa-solid', 'text-green-500');
-                    icon.classList.add('fa-copy', 'fa-regular');
-                }, 2000);
+            if (navigator.share) {
+                try {
+                    await navigator.share(shareData);
+                } catch (err) {
+                    console.log('Share canceled');
+                }
+            } else {
+                // Fallback: Copy URL
+                copyContent(window.location.href, null);
+                alert('Đã sao chép liên kết!');
+            }
+        }
+
+        // --- LOGIC: Universal Copy Function ---
+        function copyContent(text, iconId) {
+            navigator.clipboard.writeText(text).then(() => {
+                if(iconId) {
+                    const icon = document.getElementById(iconId);
+                    const originalClass = icon.className;
+                    
+                    // Switch to checkmark
+                    icon.className = "fa-solid fa-check text-green-500 transition-all scale-125";
+
+                    // Revert after 2 seconds
+                    setTimeout(() => {
+                        icon.className = "fa-regular fa-copy text-gray-300 dark:text-slate-600 transition-all";
+                    }, 2000);
+                }
             });
         }
 
-        // Initialize on Load
+        // Initialize
         initTheme();
         updateContent();
     </script>
