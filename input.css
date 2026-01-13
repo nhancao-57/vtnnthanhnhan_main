@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+@theme {
+  /* We define your custom fonts and colors right here in CSS now */
+  --font-sans: 'Be Vietnam Pro', sans-serif;
+  
+  --color-brandRed: #DC2626;
+  --color-brandYellow: #FBBF24;
+  --color-brandGreen: #16a34a;
+  
+  --color-darkCard: #1e293b;
+  --color-darkBg: #0f172a;
+}
