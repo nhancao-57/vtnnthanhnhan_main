@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   /* We define your custom fonts and colors right here in CSS now */
   --font-sans: 'Be Vietnam Pro', sans-serif;

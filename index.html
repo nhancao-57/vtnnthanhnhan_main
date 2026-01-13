@@ -22,10 +22,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
-<body class="bg-gray-100 dark:bg-darkBg text-gray-800 dark:text-gray-200 min-h-screen flex flex-col items-center justify-center p-3 sm:p-4 selection:bg-brandRed selection:text-white">
+<body class="bg-gray-100 dark:bg-slate-900 text-gray-800 dark:text-gray-200 min-h-screen flex flex-col items-center justify-center p-3 sm:p-4 selection:bg-brandRed selection:text-white transition-colors duration-300">
 
     <div class="fixed top-4 right-4 z-50 flex gap-2">
-        <div class="bg-white/80 dark:bg-slate-800/80 backdrop-blur-md p-1.5 rounded-full shadow-lg border border-white/50 dark:border-slate-700 flex items-center gap-1">
+        <div class="bg-white/80 dark:bg-slate-800/80 backdrop-blur-md p-1.5 rounded-full shadow-lg border border-white/50 dark:border-slate-700 flex items-center gap-1 transition-colors duration-300">
             
             <button onclick="toggleLang()" class="w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold hover:bg-gray-200 dark:hover:bg-slate-700 transition-colors border border-transparent dark:border-slate-600">
                 <span id="lang-display">VN</span>
@@ -45,23 +45,23 @@
         </div>
     </div>
 
-    <main class="w-full max-w-md bg-white dark:bg-darkCard rounded-[2rem] shadow-2xl overflow-hidden relative flex flex-col border border-gray-100 dark:border-slate-700">
+    <main class="w-full max-w-md bg-white dark:bg-slate-800 rounded-[2rem] shadow-2xl overflow-hidden relative flex flex-col border border-gray-100 dark:border-slate-700 transition-colors duration-300">
         <div class="relative h-48 w-full overflow-hidden bg-gray-300 dark:bg-slate-700">
             <img src="/images/thanhnhan_main.jpg" 
                  alt="Store Front" 
-                 class="w-full h-full object-cover scale-110 opacity-90 brightness-75 dark:opacity-70">
+                 class="w-full h-full object-cover scale-110 opacity-90 brightness-75 dark:opacity-70 transition-opacity duration-300">
             <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
         </div>
 
         <div class="relative px-6 -mt-16 text-center flex-grow pb-8">
             
             <div class="relative inline-block">
-                <div class="w-32 h-32 bg-white dark:bg-darkCard rounded-full p-1 shadow-lg mx-auto transition-colors">
+                <div class="w-32 h-32 bg-white dark:bg-slate-800 rounded-full p-1 shadow-lg mx-auto transition-colors duration-300">
                     <img src="/images/logo_thanhnhan.png" 
                          alt="Logo" 
-                         class="w-full h-full rounded-full object-cover border-4 border-white dark:border-slate-600">
+                         class="w-full h-full rounded-full object-cover border-4 border-white dark:border-slate-600 transition-colors duration-300">
                 </div>
-                <div class="absolute bottom-0 right-0 bg-brandRed text-white text-xs font-bold px-2 py-1 rounded-full border-2 border-white dark:border-darkCard shadow-sm">
+                <div class="absolute bottom-0 right-0 bg-brandRed text-white text-xs font-bold px-2 py-1 rounded-full border-2 border-white dark:border-slate-800 shadow-sm transition-colors duration-300">
                     Est. 2000
                 </div>
             </div>
@@ -96,7 +96,7 @@
                     </div>
                     <div class="text-left flex-grow">
                         <p class="text-xs text-gray-500 dark:text-gray-400 font-medium" data-vi="Mạng xã hội" data-en="Social Media">Mạng xã hội</p>
-                        <p class="text-base font-bold text-gray-800 dark:text-gray-100"data-vi="Trang Facebook" data-en="Facebook Page">Mạng xã hội</p>
+                        <p class="text-base font-bold text-gray-800 dark:text-gray-100" data-vi="Trang Facebook" data-en="Facebook Page">Trang Facebook</p>
                     </div>
                     <i class="fa-solid fa-arrow-up-right-from-square text-gray-300 dark:text-slate-600 text-sm"></i>
                 </a>
@@ -122,7 +122,7 @@
                     <span class="h-px w-8 bg-gray-300 dark:bg-slate-600"></span>
                 </div>
 
-                <div class="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl p-4 shadow-sm">
+                <div class="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl p-4 shadow-sm transition-colors duration-300">
                     <div class="flex justify-between items-center mb-3 pb-3 border-b border-gray-100 dark:border-slate-700/50 border-dashed">
                         <div class="flex items-center gap-2">
                             <div class="w-8 h-8 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center text-green-600">
@@ -164,7 +164,7 @@
                     <span class="h-px w-8 bg-gray-300 dark:bg-slate-600"></span>
                 </div>
                 
-                <div class="rounded-xl overflow-hidden shadow-md border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-800">
+                <div class="rounded-xl overflow-hidden shadow-md border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-800 transition-colors duration-300">
                     
                     <div class="p-4 border-b border-gray-100 dark:border-slate-700 flex items-start gap-3 text-left relative group hover:bg-gray-50 dark:hover:bg-slate-700/50 transition-colors">
                         <i class="fa-solid fa-location-dot text-brandRed mt-1 shrink-0"></i>
@@ -225,7 +225,7 @@
 
         </div>
         
-        <div class="w-full bg-gray-50 dark:bg-slate-800/50 py-4 text-center border-t border-gray-100 dark:border-slate-700">
+        <div class="w-full bg-gray-50 dark:bg-slate-800/50 py-4 text-center border-t border-gray-100 dark:border-slate-700 transition-colors duration-300">
             <p class="text-[10px] text-gray-400 dark:text-slate-500">© 2026 Cửa hàng VTNN Thành Nhân</p>
         </div>
 
@@ -237,6 +237,7 @@
         const themeMeta = document.getElementById('theme-color-meta');
         
         function initTheme() {
+            // Check localStorage or System Preference
             if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
                 document.documentElement.classList.add('dark');
                 themeIcon.classList.remove('fa-moon');
