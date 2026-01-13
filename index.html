@@ -153,7 +153,9 @@
                         <i class="fa-solid fa-location-dot text-brandRed mt-1 shrink-0"></i>
                         <div class="flex-grow pr-6">
                             <p class="text-[10px] uppercase font-bold text-gray-400 dark:text-slate-500 mb-0.5" data-vi="Địa chỉ chính" data-en="Address">Địa chỉ chính</p>
-                            <p class="text-sm text-gray-800 dark:text-gray-200 font-medium leading-snug">
+                            <p class="text-sm text-gray-800 dark:text-gray-200 font-medium leading-snug"
+                               data-vi="Khu phố Phú Long, phường An Lộc, Đồng Nai, Việt Nam"
+                               data-en="Phu Long Residential Area, An Loc Ward, Dong Nai Province, Vietnam">
                                 Khu phố Phú Long, phường An Lộc, Đồng Nai, Việt Nam
                             </p>
                         </div>
@@ -166,7 +168,9 @@
                         <i class="fa-solid fa-clock-rotate-left text-gray-400 mt-1 shrink-0"></i>
                         <div class="flex-grow pr-6">
                             <p class="text-[10px] uppercase font-bold text-gray-400 dark:text-slate-500 mb-0.5" data-vi="Trước khi thay đổi địa giới hành chính" data-en="Old Address">Trước khi thay đổi địa giới hành chính</p>
-                            <p class="text-sm text-gray-600 dark:text-gray-400 leading-snug">
+                            <p class="text-sm text-gray-600 dark:text-gray-400 leading-snug"
+                               data-vi="16 QL13, Thanh Phú, Bình Long, Bình Phước, Vietnam"
+                               data-en="No. 16, National Highway 13, Thanh Phu, Binh Long, Binh Phuoc Province, Vietnam">
                                 16 QL13, Thanh Phú, Bình Long, Bình Phước, Vietnam
                             </p>
                         </div>
@@ -193,6 +197,13 @@
                         <i class="fa-solid fa-location-arrow ml-1"></i>
                     </a>
                 </div>
+            </div>
+
+            <div class="mt-6">
+                <button onclick="sharePage()" class="w-full py-4 bg-gray-100 dark:bg-slate-700/50 hover:bg-gray-200 dark:hover:bg-slate-600 border border-gray-200 dark:border-slate-600 text-gray-700 dark:text-gray-200 rounded-xl font-bold shadow-sm transition-all active:scale-95 flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-share-nodes text-lg text-brandRed"></i>
+                    <span data-vi="Chia sẻ thông tin cửa hàng" data-en="Share Store Profile">Chia sẻ thông tin cửa hàng</span>
+                </button>
             </div>
 
         </div>
@@ -271,9 +282,9 @@
                     console.log('Share canceled');
                 }
             } else {
-                // Fallback: Copy URL
+                // Fallback: Copy URL for old phones
                 copyContent(window.location.href, null);
-                alert('Đã sao chép liên kết!');
+                alert('Đã sao chép liên kết cửa hàng!');
             }
         }
 
@@ -282,7 +293,6 @@
             navigator.clipboard.writeText(text).then(() => {
                 if(iconId) {
                     const icon = document.getElementById(iconId);
-                    const originalClass = icon.className;
                     
                     // Switch to checkmark
                     icon.className = "fa-solid fa-check text-green-500 transition-all scale-125";
