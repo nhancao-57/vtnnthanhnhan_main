@@ -1,0 +1,69 @@
+/* Keep scrolling and pinch zoom; suppress accidental double-tap page zoom. */
+html,
+body,
+button,
+a {
+    touch-action: manipulation;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+body {
+    min-height: 100vh;
+    min-height: 100svh;
+    padding: max(12px, env(safe-area-inset-top))
+             max(12px, env(safe-area-inset-right))
+             max(12px, env(safe-area-inset-bottom))
+             max(12px, env(safe-area-inset-left));
+}
+
+.page-controls {
+    top: max(16px, env(safe-area-inset-top));
+    right: max(16px, env(safe-area-inset-right));
+}
+
+button,
+a {
+    min-height: 44px;
+}
+
+button {
+    min-width: 44px;
+}
+
+/* Keep the copy target inside its address row without covering the text. */
+button[aria-label^="Copy address"] {
+    top: 4px;
+    right: 4px;
+}
+
+main .flex-grow {
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+:where(a, button):focus-visible {
+    outline: 3px solid #dc2626;
+    outline-offset: 3px;
+}
+
+@media (max-width: 639px) {
+    body {
+        /* Reserve space for the fixed toolbar above the card. */
+        padding-top: calc(max(16px, env(safe-area-inset-top)) + 72px);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html.scroll-smooth {
+        scroll-behavior: auto;
+    }
+
+    *, *::before, *::after {
+        transition-duration: 0s !important;
+        animation-duration: 0s !important;
+    }
+}

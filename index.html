@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    
+
     <title>Cửa hàng VTNN Thành Nhân</title>
     <meta name="description" content="Cửa hàng Vật Tư Nông Nghiệp Thành Nhân. Chuyên cung cấp phân bón, thuốc bảo vệ thực vật tại Bình Phước, Đồng Nai">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Cửa hàng VTNN Thành Nhân">
     <meta property="og:description" content="Chuyên kinh doanh phân bón & thuốc BVTV.">
     <meta property="og:image" content="https://vtnnthanhnhan.io.vn/images/thanhnhan_main.jpg">
-    
+
     <meta name="theme-color" id="theme-color-meta" content="#f3f4f6">
     <link rel="icon" type="image/png" href="/images/logo_thanhnhan.png">
 
@@ -18,27 +18,28 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="/output.css" rel="stylesheet">
+    <link href="/mobile.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body class="bg-gray-100 dark:bg-slate-900 text-gray-800 dark:text-gray-200 min-h-screen flex flex-col items-center justify-center p-3 sm:p-4 selection:bg-brandRed selection:text-white transition-colors duration-300">
 
-    <div class="fixed top-4 right-4 z-50 flex gap-2">
+    <div class="page-controls fixed top-4 right-4 z-50 flex gap-2">
         <div class="bg-white/80 dark:bg-slate-800/80 backdrop-blur-md p-1.5 rounded-full shadow-lg border border-white/50 dark:border-slate-700 flex items-center gap-1 transition-colors duration-300">
-            
-            <button onclick="toggleLang()" class="w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold hover:bg-gray-200 dark:hover:bg-slate-700 transition-colors border border-transparent dark:border-slate-600">
+
+            <button type="button" aria-label="Switch language" onclick="toggleLang()" class="w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold hover:bg-gray-200 dark:hover:bg-slate-700 transition-colors border border-transparent dark:border-slate-600">
                 <span id="lang-display">VN</span>
             </button>
 
             <div class="w-px h-4 bg-gray-300 dark:bg-slate-600 mx-1"></div>
 
-            <button onclick="toggleTheme()" class="w-8 h-8 rounded-full flex items-center justify-center text-gray-600 dark:text-yellow-400 hover:bg-gray-200 dark:hover:bg-slate-700 transition-colors">
+            <button type="button" aria-label="Toggle color theme" onclick="toggleTheme()" class="w-8 h-8 rounded-full flex items-center justify-center text-gray-600 dark:text-yellow-400 hover:bg-gray-200 dark:hover:bg-slate-700 transition-colors">
                 <i id="theme-icon" class="fa-solid fa-moon"></i>
             </button>
 
             <div class="w-px h-4 bg-gray-300 dark:bg-slate-600 mx-1"></div>
 
-            <button onclick="sharePage()" class="w-8 h-8 rounded-full flex items-center justify-center text-brandRed hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors">
+            <button type="button" aria-label="Share store profile" onclick="sharePage()" class="w-8 h-8 rounded-full flex items-center justify-center text-brandRed hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors">
                 <i class="fa-solid fa-share-nodes"></i>
             </button>
         </div>
@@ -46,18 +47,18 @@
 
     <main class="w-full max-w-md bg-white dark:bg-slate-800 rounded-[2rem] shadow-2xl overflow-hidden relative flex flex-col border border-gray-100 dark:border-slate-700 transition-colors duration-300">
         <div class="relative h-48 w-full overflow-hidden bg-gray-300 dark:bg-slate-700">
-            <img src="/images/thanhnhan_main.jpg" 
-                 alt="Store Front" 
+            <img src="/images/thanhnhan_main.jpg"
+                 alt="Store Front"
                  class="w-full h-full object-cover scale-110 opacity-90 brightness-75 dark:opacity-70 transition-opacity duration-300">
             <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
         </div>
 
         <div class="relative px-6 -mt-16 text-center flex-grow pb-8">
-            
+
             <div class="relative inline-block">
                 <div class="w-32 h-32 bg-white dark:bg-slate-800 rounded-full p-1 shadow-lg mx-auto transition-colors duration-300">
-                    <img src="/images/logo_thanhnhan.png" 
-                         alt="Logo" 
+                    <img src="/images/logo_thanhnhan.png"
+                         alt="Logo"
                          class="w-full h-full rounded-full object-cover border-4 border-white dark:border-slate-600 transition-colors duration-300">
                 </div>
                 <div class="absolute bottom-0 right-0 bg-brandRed text-white text-xs font-bold px-2 py-1 rounded-full border-2 border-white dark:border-slate-800 shadow-sm transition-colors duration-300">
@@ -65,12 +66,12 @@
                 </div>
             </div>
 
-            <h1 class="text-2xl font-bold text-brandRed mt-3" 
-                data-vi="Cửa hàng VTNN Thành Nhân" 
+            <h1 class="text-2xl font-bold text-brandRed mt-3"
+                data-vi="Cửa hàng VTNN Thành Nhân"
                 data-en="Thanh Nhan Store">
                 Cửa hàng VTNN Thành Nhân
             </h1>
-            
+
             <p class="text-gray-600 dark:text-gray-400 text-sm mt-1 px-4 leading-relaxed"
                data-vi="Chuyên kinh doanh phân bón & <br> Thuốc bảo vệ thực vật"
                data-en="Specializing in Fertilizers, Pesticides & <br> Plant Protection Products">
@@ -100,7 +101,7 @@
                     <i class="fa-solid fa-arrow-up-right-from-square text-gray-300 dark:text-slate-600 text-sm"></i>
                 </a>
 
-                <button onclick="copyContent('admin@vtnnthanhnhan.io.vn', 'email-icon')" class="w-full flex items-center p-3 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl shadow-sm hover:shadow-md hover:border-brandYellow transition-all active:scale-95 group">
+                <button type="button" aria-label="Copy email address" onclick="copyContent('admin@vtnnthanhnhan.io.vn', 'email-icon')" class="w-full flex items-center p-3 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl shadow-sm hover:shadow-md hover:border-brandYellow transition-all active:scale-95 group">
                     <div class="w-10 h-10 rounded-full bg-yellow-100 dark:bg-yellow-900/30 flex items-center justify-center text-yellow-700 dark:text-yellow-500 mr-3 group-hover:bg-brandYellow group-hover:text-white transition-colors">
                         <i class="fa-solid fa-envelope"></i>
                     </div>
@@ -115,8 +116,8 @@
             <div class="mt-8">
                 <div class="flex items-center justify-center mb-4">
                     <span class="h-px w-8 bg-gray-300 dark:bg-slate-600"></span>
-                    <span class="text-xs font-semibold text-gray-400 dark:text-slate-500 uppercase mx-2 tracking-wider" 
-                          data-vi="GIỜ HOẠT ĐỘNG" 
+                    <span class="text-xs font-semibold text-gray-400 dark:text-slate-500 uppercase mx-2 tracking-wider"
+                          data-vi="GIỜ HOẠT ĐỘNG"
                           data-en="OPENING HOURS">GIỜ HOẠT ĐỘNG</span>
                     <span class="h-px w-8 bg-gray-300 dark:bg-slate-600"></span>
                 </div>
@@ -157,25 +158,25 @@
             <div class="mt-8">
                 <div class="flex items-center justify-center mb-4">
                     <span class="h-px w-8 bg-gray-300 dark:bg-slate-600"></span>
-                    <span class="text-xs font-semibold text-gray-400 dark:text-slate-500 uppercase mx-2 tracking-wider" 
-                          data-vi="ĐỊA CHỈ" 
+                    <span class="text-xs font-semibold text-gray-400 dark:text-slate-500 uppercase mx-2 tracking-wider"
+                          data-vi="ĐỊA CHỈ"
                           data-en="LOCATION">ĐỊA CHỈ</span>
                     <span class="h-px w-8 bg-gray-300 dark:bg-slate-600"></span>
                 </div>
-                
+
                 <div class="rounded-xl overflow-hidden shadow-md border border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-800 transition-colors duration-300">
-                    
+
                     <div class="p-4 border-b border-gray-100 dark:border-slate-700 flex items-start gap-3 text-left relative group hover:bg-gray-50 dark:hover:bg-slate-700/50 transition-colors">
                         <i class="fa-solid fa-location-dot text-brandRed mt-1 shrink-0"></i>
                         <div class="flex-grow pr-6">
                             <p class="text-[10px] uppercase font-bold text-gray-400 dark:text-slate-500 mb-0.5" data-vi="Địa chỉ chính" data-en="Address">Địa chỉ chính</p>
                             <p class="text-sm text-gray-800 dark:text-gray-200 font-medium leading-snug"
-                               data-vi="Khu phố Phú Long, phường An Lộc, Đồng Nai, Việt Nam"
-                               data-en="Phu Long Residential Area, An Loc Ward, Dong Nai Province, Vietnam">
-                                Khu phố Phú Long, phường An Lộc, Đồng Nai, Việt Nam
+                               id="current-address" data-vi="Quốc Lộ 13, Khu phố Phú Thành, phường An Lộc, Thành phố Đồng Nai"
+                               data-en="National Highway 13, Phu Thanh Quarter, An Loc Ward, Dong Nai City">
+                                Quốc Lộ 13, Khu phố Phú Thành, phường An Lộc, Thành phố Đồng Nai
                             </p>
                         </div>
-                        <button onclick="copyContent('Khu phố Phú Long, phường An Lộc, Đồng Nai, Việt Nam', 'icon-addr-1')" class="absolute top-4 right-4 text-gray-300 hover:text-brandRed transition-colors">
+                        <button type="button" aria-label="Copy address" onclick="copyContent(document.getElementById('current-address').textContent.trim(), 'icon-addr-1')" class="absolute top-4 right-4 text-gray-300 hover:text-brandRed transition-colors">
                             <i id="icon-addr-1" class="fa-regular fa-copy"></i>
                         </button>
                     </div>
@@ -190,40 +191,40 @@
                                 16 QL13, Thanh Phú, Bình Long, Bình Phước, Vietnam
                             </p>
                         </div>
-                        <button onclick="copyContent('16 QL13, Thanh Phú, Bình Long, Bình Phước, Vietnam', 'icon-addr-2')" class="absolute top-4 right-4 text-gray-300 hover:text-brandRed transition-colors">
+                        <button type="button" aria-label="Copy address" onclick="copyContent('16 QL13, Thanh Phú, Bình Long, Bình Phước, Vietnam', 'icon-addr-2')" class="absolute top-4 right-4 text-gray-300 hover:text-brandRed transition-colors">
                             <i id="icon-addr-2" class="fa-regular fa-copy"></i>
                         </button>
                     </div>
-                    
+
                     <div class="relative w-full h-32 bg-gray-200 dark:bg-slate-700">
-                        <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3907.3457879631933!2d106.61003677401197!3d11.669887942080829!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317353f61dfa8769%3A0xa7fc2fc0cbfb4081!2zQ-G7rWEgaMOgbmcgVlROTiBUaMOgbmggTmjDom4!5e0!3m2!1sen!2s!4v1768229223248!5m2!1sen!2s" 
-                            width="100%" 
-                            height="100%" 
-                            style="border:0;" 
-                            allowfullscreen="" 
-                            loading="lazy" 
+                        <iframe title="Store location"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3907.3457879631933!2d106.61003677401197!3d11.669887942080829!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317353f61dfa8769%3A0xa7fc2fc0cbfb4081!2zQ-G7rWEgaMOgbmcgVlROTiBUaMOgbmggTmjDom4!5e0!3m2!1sen!2s!4v1768229223248!5m2!1sen!2s"
+                            width="100%"
+                            height="100%"
+                            style="border:0;"
+                            allowfullscreen=""
+                            loading="lazy"
                             class="opacity-70 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-500"
                             referrerpolicy="no-referrer-when-downgrade">
                         </iframe>
                     </div>
 
                     <a href="https://maps.app.goo.gl/2JqfZkMFFkYQKAyK6" target="_blank" class="block w-full text-center py-3 text-xs font-bold text-brandRed hover:bg-red-50 dark:hover:bg-red-900/10 transition-colors">
-                        <span data-vi="Mở bản đồ chỉ đường" data-en="Open Google Maps">Mở bản đồ chỉ đường</span> 
+                        <span data-vi="Mở bản đồ chỉ đường" data-en="Open Google Maps">Mở bản đồ chỉ đường</span>
                         <i class="fa-solid fa-location-arrow ml-1"></i>
                     </a>
                 </div>
             </div>
 
             <div class="mt-6">
-                <button onclick="sharePage()" class="w-full py-4 bg-gray-100 dark:bg-slate-700/50 hover:bg-gray-200 dark:hover:bg-slate-600 border border-gray-200 dark:border-slate-600 text-gray-700 dark:text-gray-200 rounded-xl font-bold shadow-sm transition-all active:scale-95 flex items-center justify-center gap-2">
+                <button type="button" aria-label="Share store profile" onclick="sharePage()" class="w-full py-4 bg-gray-100 dark:bg-slate-700/50 hover:bg-gray-200 dark:hover:bg-slate-600 border border-gray-200 dark:border-slate-600 text-gray-700 dark:text-gray-200 rounded-xl font-bold shadow-sm transition-all active:scale-95 flex items-center justify-center gap-2">
                     <i class="fa-solid fa-share-nodes text-lg text-brandRed"></i>
                     <span data-vi="Chia sẻ thông tin cửa hàng" data-en="Share Store Profile">Chia sẻ thông tin cửa hàng</span>
                 </button>
             </div>
 
         </div>
-        
+
         <div class="w-full bg-gray-50 dark:bg-slate-800/50 py-4 text-center border-t border-gray-100 dark:border-slate-700 transition-colors duration-300">
             <p class="text-[10px] text-gray-400 dark:text-slate-500">© 2026 Cửa hàng VTNN Thành Nhân</p>
         </div>
@@ -234,19 +235,19 @@
         // --- LOGIC: Theme Management ---
         const themeIcon = document.getElementById('theme-icon');
         const themeMeta = document.getElementById('theme-color-meta');
-        
+
         function initTheme() {
             // Check localStorage or System Preference
             if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
                 document.documentElement.classList.add('dark');
                 themeIcon.classList.remove('fa-moon');
                 themeIcon.classList.add('fa-sun');
-                themeMeta.content = "#0f172a"; 
+                themeMeta.content = "#0f172a";
             } else {
                 document.documentElement.classList.remove('dark');
                 themeIcon.classList.remove('fa-sun');
                 themeIcon.classList.add('fa-moon');
-                themeMeta.content = "#f3f4f6"; 
+                themeMeta.content = "#f3f4f6";
             }
         }
 
@@ -271,6 +272,7 @@
         const langDisplay = document.getElementById('lang-display');
 
         function updateContent() {
+            document.documentElement.lang = currentLang;
             const elements = document.querySelectorAll(`[data-${currentLang}]`);
             elements.forEach(el => {
                 el.innerHTML = el.getAttribute(`data-${currentLang}`);
